@@ -1,6 +1,6 @@
 # Sabo
 
-A SOAP client with WDSL support.
+A SOAP client with WSDL support.
 
 ## Installation
 
