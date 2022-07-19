@@ -9,7 +9,7 @@ A SOAP client with WDSL support.
    ```yaml
    dependencies:
      sabo:
-       github: grkek/sabo
+       github: place-technology/sabo
    ```
 
 2. Run `shards install`
@@ -19,28 +19,19 @@ A SOAP client with WDSL support.
 ```crystal
 require "sabo"
 
-document = Sabo::WSDL::Document.new("./example/input.wsdl")
+document = Sabo::WSDL::Document.new("http://www.dneonline.com/calculator.asmx?WSDL")
 client = Sabo::Client.new(document: document, version: "1.2")
 
 puts client.operations
 
 response = client.call(operation: "NumberToWords", body: {"ubiNum" => Sabo::Parameter.new(1000)})
 
-puts response
-  .json
-  .["Envelope"]
-  .["Body"]
-  .["NumberToWordsResponse"]
-  .["NumberToWordsResult"]
+puts response.result
 ```
-
-## Development
-
-TODO: Write development instructions here
 
 ## Contributing
 
-1. Fork it (<https://github.com/your-github-user/sabo/fork>)
+1. Fork it (<https://github.com/place-technology/sabo/fork>)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
@@ -48,4 +39,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [Giorgi Kavrelishvili](https://github.com/your-github-user) - creator and maintainer
+- [Giorgi Kavrelishvili](https://github.com/grkek) - creator and maintainer
