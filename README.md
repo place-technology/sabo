@@ -24,7 +24,7 @@ client = Sabo::Client.new(document: document, version: "1.2")
 
 puts client.operations
 
-response = client.call(operation: "NumberToWords", body: {"ubiNum" => Sabo::Parameter.new(1000)})
+response = client.call(operation: "Add", body: {"intA" => Sabo::Parameter.new(5), "intB" => Sabo::Parameter.new(5)})
 
 puts response.result
 ```
