@@ -1,0 +1,20 @@
+name: sabo
+version: 0.1.0
+
+authors:
+  - Giorgi Kavrelishvili <giorgi.kavrelishvili@pm.me>
+
+dependencies:
+  halite:
+    github: icyleaf/halite
+
+  xml_converter:
+    github: mamantoha/xml_converter
+
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+
+crystal: 1.4.1
+
+license: MIT
